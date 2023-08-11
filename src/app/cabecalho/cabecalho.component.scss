@@ -1,23 +1,33 @@
 @import "../app.component.scss";
 
 mat-toolbar {
-    background-color: $cor-principal;
+    background-image: linear-gradient(to right, #ffffff, #f9a799);
+    /* background-color: $cor-cabecalho;*/
     color: $branco;
+    height: 80px;
+
     .container {
         width: 1140px;
         display: flex;
         margin: auto;
-        h1 {
-            font-family: $fonte-principal;
-            font-size: $grande;
-            color: $branco;
-            padding-top: 15px; 
+        height: 50px;
+
+        #log {
+            width: 40px;
+
+            img {
+                width: 100%;
+
+            }
         }
+
         .menu-spacer {
             flex: 1 1 auto;
         }
+
         button {
             margin-top: 10px;
+
             &:hover {
                 color: $cor-secundaria;
             }

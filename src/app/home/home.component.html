@@ -1,1 +1,98 @@
-<p>home works!</p>
+<div class="container">
+    <h1> Bem vindo {{ nome + " " + sobrenome }}</h1>
+    <!-- <h2>{{ data | date : 'dd    /MM/YYYY' }}</h2> -->
+
+  <!-- CAROUSEL COMEÇO-->
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="carouselimg" src="https://i.ibb.co/4RykkSL/img1.jpg" alt="img1">
+            </div>
+            <div class="carousel-item">
+                <img class="carouselimg" src="https://i.ibb.co/M775YFz/logofundo.jpg" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img class="carouselimg"
+                    src="https://imagens-revista-pro.vivadecora.com.br/uploads/2017/06/livros-para-arquitetos.jpg"
+                    class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+  <!-- CAROUSEL FIM -->
+      <br>
+      <br>
+        <section id="livro-favoritos">
+            <h2>Aqui estão os livros em destaque do mês:</h2>
+            <mat-grid-list cols="3" rowHeight="4:4">
+                    <div *ngFor="let livro of livros; let i = index">
+                        <mat-grid-tile *ngIf="livro.favorito">
+                            <mat-card>
+                                <h3>{{ livro.titulo }}</h3>
+                                <mat-card-content>
+                                    <img mat-card-image [src]="livro.foto" [alt]="livro.titulo" />
+                                    <ul>
+                                        <li>valor: {{ livro.quartos }}</li>
+                                        <li>Banheiros: {{ livro.banheiros }}</li>
+                                        <li>Metragem: {{ livro.area }} m²</li>
+                                        <li>Preço: {{ livro.preco | currency }}</li>
+                                    </ul>
+                                </mat-card-content>
+                                <mat-card-actions>
+                                    <button [class]="livro.favorito === false ? 'favorite' : 'favorite-checked'"
+                                        [title]="livro.favorito === false ? 'Adicionar aos favoritos' : 'Remover dos favoritos'"
+                                        mat-button (click)="toogleFavorito(i)">
+                                        <mat-icon aria-hidden="false" aria-label="Favoritos"
+                                            fontIcon="favorite"></mat-icon>
+                                    </button>
+                                    <button mat-button (click)="verDetalhes(livro.id)">Mais detalhes</button>
+                                </mat-card-actions>
+                            </mat-card>
+                        </mat-grid-tile>
+                    </div>
+            </mat-grid-list>
+        </section>
+        <section id="lista-livros">
+            <h2>Todos os Livros:</h2>
+            <mat-grid-list cols="3" rowHeight="4:4">
+                <mat-grid-tile *ngFor="let livro of livros; let i = index">
+                    <mat-card>
+                        <h3>{{ livro.titulo }}</h3>
+                        <mat-card-content>
+                            <img mat-card-image [src]="livro.foto" [alt]="livro.titulo" />
+                            <ul>
+                                <!-- <li>valor: {{ livro.quartos }}</li> -->
+                                <li>Autor: {{ livro.banheiros }}</li>
+                                <!-- <li>Metragem: {{ livro.area }} m²</li> -->
+                                <li>Preço: {{ livro.preco | currency }}</li>
+                            </ul>
+                        </mat-card-content>
+                        <mat-card-actions>
+                            
+                            <button [class]="livro.favorito === false ? 'favorite' : 'favorite-checked'"
+                                [title]="livro.favorito === false ? 'Adicionar aos favoritos' : 'Remover dos favoritos'"
+                                mat-button (click)="toogleFavorito(i)">
+                                <mat-icon aria-hidden="false" aria-label="Favoritos" fontIcon="favorite"></mat-icon>
+                            </button>
+                            <button mat-button (click)="verDetalhes(livro.id)">Mais detalhes</button>
+                        </mat-card-actions>
+                    </mat-card>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </section>
+     <br>
+     <br>
+     <br>
+     <br>
+
+</div>    

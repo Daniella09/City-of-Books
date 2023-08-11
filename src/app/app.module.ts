@@ -13,15 +13,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { RodapeComponent } from './rodape/rodape.component';
+import { DetalhesComponent } from './detalhes/detalhes.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     CabecalhoComponent,
     QuemSomosComponent,
-    ContatoComponent
+    RodapeComponent,
+    DetalhesComponent
   ],
   imports: [
     BrowserModule,
