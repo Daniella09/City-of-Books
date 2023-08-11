@@ -64,6 +64,7 @@
                     list-style-type: none;
                     float: right;
                     justify-content: flex-start;
+                    margin-right: 50px;
                    
 
                     li {
@@ -71,6 +72,8 @@
                         color: $cinza-medio;
                         font-size: $media;
                         line-height: $grande;
+                        display: flex;
+                
                        
                      
                     }
@@ -117,4 +120,9 @@
         padding-top: 80px;
 
     }
+}
+
+@media(min-width:345px),(max-width:1140px){
+
+    h2{}
 }

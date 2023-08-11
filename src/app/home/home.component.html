@@ -42,10 +42,10 @@
                                 <mat-card-content>
                                     <img mat-card-image [src]="livro.foto" [alt]="livro.titulo" />
                                     <ul>
-                                        <li>valor: {{ livro.quartos }}</li>
-                                        <li>Banheiros: {{ livro.banheiros }}</li>
-                                        <li>Metragem: {{ livro.area }} m²</li>
-                                        <li>Preço: {{ livro.preco | currency }}</li>
+                                        <!-- <li>valor: {{ livro.quartos }}</li> -->
+                                <li>Autor: {{ livro.nome }}</li>
+                                <!-- <li>Metragem: {{ livro.area }} m²</li> -->
+                                <li>Preço: {{ livro.preco | currency }}</li>
                                     </ul>
                                 </mat-card-content>
                                 <mat-card-actions>
@@ -72,7 +72,7 @@
                             <img mat-card-image [src]="livro.foto" [alt]="livro.titulo" />
                             <ul>
                                 <!-- <li>valor: {{ livro.quartos }}</li> -->
-                                <li>Autor: {{ livro.banheiros }}</li>
+                                <li>Autor: {{ livro.nome }}</li>
                                 <!-- <li>Metragem: {{ livro.area }} m²</li> -->
                                 <li>Preço: {{ livro.preco | currency }}</li>
                             </ul>
